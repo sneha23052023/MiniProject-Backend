@@ -1,10 +1,13 @@
 from flask import Flask
+from groq import prompts
+
 
 app = Flask(__name__)
 
-@app.route('/', methods=['GET'])
+@app.route('/', methods=['POST'])
 def home():
-    return "Hello, World!"
+    content = prompts("Program for binary search")
+    return content
 
 
 
