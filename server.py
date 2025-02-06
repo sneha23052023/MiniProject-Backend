@@ -7,7 +7,7 @@ cors = CORS(app)
 
 @app.route('/', methods=['GET','POST'])
 def home():
-    print(request.json)
+    #print(request.json)
     content = prompts('''//binary search
     int binarySearch(int arr[], int low, int high, int x){
         while (low <= high) {
@@ -17,7 +17,7 @@ def home():
             if (arr[mid] == x)
                 return mid;
                 ''')
-    return content
+    return content if content else " "
 
 
 
