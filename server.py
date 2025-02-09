@@ -5,18 +5,15 @@ from flask_cors import CORS
 app = Flask(__name__)
 cors = CORS(app)
 
-@app.route('/', methods=['GET','POST'])
+@app.route('/', methods=['POST'])
 def home():
-    #print(request.json)
-    content = prompts('''//binary search
-    int binarySearch(int arr[], int low, int high, int x){
-        while (low <= high) {
-            int mid = low + (high - low) / 2;
+    req = request.json
+    hintType = req["hintType"]
+    hintContent = req["hintContent"]["code"]
 
-            // Check if x is present at mid
-            if (arr[mid] == x)
-                return mid;
-                ''')
+    content = prompts(hintType,hintContent)
+    print(req)
+    
     return content if content else " "
 
 
