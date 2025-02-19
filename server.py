@@ -10,7 +10,6 @@ def home():
     req = request.json
     hintType = req["hintType"]
     hintContent = req["hintContent"]["code"]
-
     content = prompts(hintType,hintContent)
     print(req)
     
