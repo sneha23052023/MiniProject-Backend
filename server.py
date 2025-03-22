@@ -9,7 +9,7 @@ cors = CORS(app)
 def home():
     req = request.json
     hintType = req["hintType"]
-    hintContent = req["hintContent"]["code"]
+    hintContent = req["hintContent"]
     content = prompts(hintType,hintContent)
     print(req)
     
