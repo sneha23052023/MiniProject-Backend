@@ -6,7 +6,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 from flask_socketio import SocketIO, emit
 from groq import prompts,send_request_json,generateType_json
-from test import gemini_request
+# from test import gemini_request
 
 app = Flask(__name__)
 CORS(app)
